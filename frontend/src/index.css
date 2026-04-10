@@ -1,0 +1,65 @@
+/* Import Tailwind CSS layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   Base styles - styling dasar untuk seluruh aplikasi
+   ===================================================== */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+
+  /* Styling scrollbar agar lebih minimalis */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+}
+
+/* =====================================================
+   Component styles - komponen yang sering digunakan
+   ===================================================== */
+@layer components {
+  /* Tombol utama (biru) */
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold 
+           px-4 py-2 rounded-xl transition-all duration-200 
+           disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-95;
+  }
+
+  /* Tombol sekunder (outline) */
+  .btn-secondary {
+    @apply border border-slate-300 hover:bg-slate-100 text-slate-700 
+           font-medium px-4 py-2 rounded-xl transition-all duration-200
+           active:scale-95;
+  }
+
+  /* Input field standar */
+  .input-field {
+    @apply w-full border border-slate-200 rounded-xl px-4 py-2.5 
+           text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 
+           focus:border-transparent transition-all duration-200
+           placeholder:text-slate-400 bg-white;
+  }
+
+  /* Card container */
+  .card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-sm;
+  }
+}
