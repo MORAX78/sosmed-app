@@ -5,8 +5,8 @@ import axios from 'axios';
  * Auto-attach token dari localStorage ke setiap request.
  */
 const api = axios.create({
-  baseURL: '/api',
-  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+  baseURL: 'https://88e5-103-118-106-226.ngrok-free.app/api',
+  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'ngrok-skip-browser-warning': 'true' },
 });
 
 api.interceptors.request.use((config) => {
